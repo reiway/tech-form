@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="header">
+    <img src="../assets/Logo TCB inspire no tagline 1.png" alt="">
+  </div>
+  <div class="main" *ngIf="!isSubmit">
+    <div class="item">
+      <p>Tên Facebook/Instagram của bạn là gì?</p>
+      <input type="text" placeholder="Bạn hay được gọi là gì nhỉ?" [(ngModel)]="name">
+    </div>
+    <div class="item">
+      <p>Techcombank Inspire có thể làm gì để
+        nâng cấp trải nghiệm cho bạn?</p>
+      <input type="text" placeholder="TECHCOMBANK CẢI THIỆN" [maxlength]="50" [(ngModel)]="comment">
+    </div>
+    <p>Kí tự: {{comment.length}}/50</p>
+  </div>
+  <div class="main" *ngIf="isSubmit">
+    <p class="thanks">
+      Cảm ơn<br>
+      câu trả lời của bạn
+      <br><br>
+      Hãy nhìn lên màn hình lớn
+      ngay bên cạnh!
+    </p>
+
+  </div>
+  <div class="footer">
+    <img class="form" src="../assets/Cụm text 1.png" alt="" *ngIf="!isSubmit">
+    <img src="../assets/Image 1.png" alt="" *ngIf="isSubmit">
+  </div>
+</div>
