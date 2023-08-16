@@ -19,7 +19,7 @@ export class AppComponent {
     private toastr: ToastrService,
     private http: HttpClient
   ) {
-    this.http.get('http://150.95.112.76:8088/api/v1/questions').subscribe((res: any) => {
+    this.http.get('https://api.thoikhacgiaothoi.com/api/v1/questions').subscribe((res: any) => {
       if (res?.data) {
         this.coment_id = res.data[1].id;
         this.name_id = res.data[0].id;
@@ -37,7 +37,7 @@ export class AppComponent {
 
   submit() {
     if (!this.disabled) {
-      this.http.post('http://150.95.112.76:8088/api/v1/answers', [
+      this.http.post('https://api.thoikhacgiaothoi.com/api/v1/answers', [
         {
           question_id: this.coment_id,
           answers: [this.comment]
