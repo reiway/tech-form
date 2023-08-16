@@ -59,6 +59,24 @@
                 font-weight: 700;
                 margin-bottom: 16px;
             }
+
+            button {
+                border-radius: 200px;
+                background: #FF0005;
+                font-weight: 700;
+                color: white;
+                font-size: 22px;
+                border: none;
+                cursor: pointer;
+                width: calc(75% + 52px);
+                padding: 20px 26px;
+                margin-top: 16px
+            }
+
+            button:disabled {
+                background: rgba(238, 238, 238, 0.50) !important;
+                color: #D8D8D8 !important;
+            }
         }
     }
 

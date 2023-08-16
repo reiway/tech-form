@@ -5,14 +5,20 @@
   <div class="main" *ngIf="!isSubmit">
     <div class="item">
       <p>Tên Facebook/Instagram của bạn là gì?</p>
-      <input type="text" placeholder="Bạn hay được gọi là gì nhỉ?" [(ngModel)]="name">
+      <input type="text" placeholder="Bạn hay được gọi là gì nhỉ?" [(ngModel)]="name" (ngModelChange)="check($event)">
     </div>
     <div class="item">
       <p>Techcombank Inspire có thể làm gì để
         nâng cấp trải nghiệm cho bạn?</p>
-      <input type="text" placeholder="TECHCOMBANK CẢI THIỆN" [maxlength]="50" [(ngModel)]="comment">
+      <input type="text" placeholder="TECHCOMBANK CẢI THIỆN" [maxlength]="50" [(ngModel)]="comment"
+        (ngModelChange)="check($event)">
     </div>
     <p>Kí tự: {{comment.length}}/50</p>
+    <div class="item">
+      <button (click)="submit()" [disabled]="disabled">
+        Gửi câu trả lời
+      </button>
+    </div>
   </div>
   <div class="main" *ngIf="isSubmit">
     <p class="thanks">
@@ -22,7 +28,6 @@
       Hãy nhìn lên màn hình lớn
       ngay bên cạnh!
     </p>
-
   </div>
   <div class="footer">
     <img class="form" src="../assets/Cụm text 1.png" alt="" *ngIf="!isSubmit">
