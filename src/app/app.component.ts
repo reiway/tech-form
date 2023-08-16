@@ -78,20 +78,32 @@ export class AppComponent {
     //     // }
     //   })
     // })
+    let ignore = false;
+    let text = ''
+    this.ignore.forEach((ele: any) => {
+      if (this.comment.includes(ele)) {
+        ignore = true;
+        text = ele;
+      }
+    })
     if (!this.disabled) {
-      this.http.post('https://api.thoikhacgiaothoi.com/api/v1/answers', [
-        {
-          question_id: this.coment_id,
-          answers: [this.comment]
-        }, {
-          question_id: this.name_id,
-          answers: [this.name]
-        },
-      ]).subscribe((res) => {
-        if (res) {
-          this.isSubmit = true;
-        }
-      })
+      if (!ignore) {
+        this.http.post('https://api.thoikhacgiaothoi.com/api/v1/answers', [
+          {
+            question_id: this.coment_id,
+            answers: [this.comment]
+          }, {
+            question_id: this.name_id,
+            answers: [this.name]
+          },
+        ]).subscribe((res) => {
+          if (res) {
+            this.isSubmit = true;
+          }
+        })
+      } else {
+        this.toastr.warning(`Câu trả lời không được có từ "${text}"`)
+      }
     }
   }
 }
