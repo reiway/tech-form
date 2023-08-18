@@ -9,9 +9,9 @@
     </div>
     <div class="item">
       <p>Nếu không ngần ngại nói "why not?", bạn mơ ước điều gì?</p>
-      <input type="text" [maxlength]="50" [(ngModel)]="comment" (ngModelChange)="check($event)">
+      <input type="text" [maxlength]="30" [(ngModel)]="comment" (ngModelChange)="check($event)">
     </div>
-    <p>Kí tự: {{comment.length}}/50</p>
+    <p>Kí tự: {{comment.length}}/30</p>
     <div class="item">
       <button (click)="submit()" [disabled]="disabled">
         Gửi câu trả lời
