@@ -40,7 +40,7 @@ export class AppComponent {
     "Giúp đỡ thêm nhiều trẻ em vùng cao",
     "Công ty được niêm yết trên sàn chứng khoán",
     "Xây dựng công ty vững mạnh",
-    "Mua sắm đồ Tiffany & Co."
+    "Mua sắm đồ Tiffany & Co.",
   ];
   constructor(
     private toastr: ToastrService,
@@ -81,7 +81,7 @@ export class AppComponent {
     let ignore = false;
     let text = ''
     this.ignore.forEach((ele: any) => {
-      if (this.comment.includes(ele)) {
+      if (this.comment.toLowerCase().includes(ele.toLowerCase())) {
         ignore = true;
         text = ele;
       }
