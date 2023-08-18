@@ -9,8 +9,7 @@
     </div>
     <div class="item">
       <p>Nếu không ngần ngại nói "why not?", bạn mơ ước điều gì?</p>
-      <input type="text" placeholder="TECHCOMBANK CẢI THIỆN" [maxlength]="50" [(ngModel)]="comment"
-        (ngModelChange)="check($event)">
+      <input type="text" [maxlength]="50" [(ngModel)]="comment" (ngModelChange)="check($event)">
     </div>
     <p>Kí tự: {{comment.length}}/50</p>
     <div class="item">
