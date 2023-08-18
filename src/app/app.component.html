@@ -5,10 +5,10 @@
   <div class="main" *ngIf="!isSubmit">
     <div class="item">
       <p>Tên Facebook/Instagram của bạn là gì?</p>
-      <input type="text" placeholder="Bạn hay được gọi là gì nhỉ?" [(ngModel)]="name" (ngModelChange)="check($event)">
+      <input type="text" [(ngModel)]="name" (ngModelChange)="check($event)">
     </div>
     <div class="item">
-      <p>Nếu không ngần ngại nói "why not?", bạn mơ ước điều gì?</p>
+      <p>Nếu không ngần ngại nói "why not", bạn mơ ước điều gì?</p>
       <input type="text" [maxlength]="30" [(ngModel)]="comment" (ngModelChange)="check($event)">
     </div>
     <p>Kí tự: {{comment.length}}/30</p>
